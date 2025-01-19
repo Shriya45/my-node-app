@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User Data</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <p><strong>User ID:</strong> <span id="displayUserId"></span></p>
+    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    <p><strong>Name:</strong> <span id="displayName"></span></p>
+    <p><strong>Uploaded Image:</strong></p>
+    <img id="displayImage" alt="Uploaded Image" style="max-width: 300px; border: 1px solid #ccc;"><br><br>
+    
+    <p><strong>Uploaded Video:</strong></p>
+    <video id="displayVideo" controls style="max-width: 300px; border: 1px solid #ccc;"></video>
+
+    <script>
+        // Retrieve data from localStorage
+        const userId = localStorage.getItem('userId');
+        const email = localStorage.getItem('email');
+        const name = localStorage.getItem('name');
+        const image = localStorage.getItem('image');
+        const video = localStorage.getItem('video');
+
+        // Display text data
+        document.getElementById('displayUserId').textContent = userId;
+        document.getElementById('displayEmail').textContent = email;
+        document.getElementById('displayName').textContent = name;
+
+        // Display image
+        const imgElement = document.getElementById('displayImage');
+        imgElement.src = image;
+
+        // Display video
+        const videoElement = document.getElementById('displayVideo');
+        videoElement.src = video;
+    </script>
+</body>
+</html>
